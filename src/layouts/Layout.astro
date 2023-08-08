@@ -1,0 +1,56 @@
+---
+import Menu from '../components/Menu.astro'
+import Header from '../components/Header.astro'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Aplicación para guardar los registros de tu presión arterial" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <title>Tensión Arterial App</title>
+  </head>
+  <body>
+    <div class="app">
+      <main class="flex flex-col flex-grow h-full px-[30px]">
+        <Header />
+        <slot />
+      </main>
+      <Menu />
+    </div>
+  </body>
+</html>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-family: "Poppins", "sans-serif";
+    color: rgb(50, 42, 51);
+  }
+
+  .app {
+    width: 330px;
+    height: 680px;
+    border-radius: 50px;
+    background: radial-gradient(
+      circle,
+      rgb(236, 236, 236) 0%,
+      rgb(255, 255, 255) 80%
+    );
+    padding: 60px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+</style>
